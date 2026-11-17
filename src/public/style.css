@@ -1,0 +1,286 @@
+:root {
+  --ink: #12343b;
+  --ink-soft: #4a6a70;
+  --paper: #fbf6ee;
+  --card: #ffffff;
+  --line: #e8dfd0;
+  --coral: #ff7a59;
+  --coral-dark: #e0593a;
+  --sand: #f3e9d8;
+  --ok: #2f8f6b;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    ui-rounded,
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.who {
+  font-size: 0.9rem;
+  color: #cfe3e6;
+}
+
+.wrap {
+  flex: 1;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.login {
+  max-width: 400px;
+  margin: 48px auto;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.muted {
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  background: #fffdf9;
+  color: var(--ink);
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #ffb9a6;
+  outline-offset: 1px;
+}
+
+button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--coral);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--coral-dark);
+}
+
+button.secondary {
+  background: var(--ink);
+}
+
+button.secondary:hover {
+  background: #0b2227;
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+button.ghost:hover {
+  background: var(--sand);
+}
+
+button.danger {
+  background: #b3261e;
+}
+
+.error {
+  color: #b3261e;
+  min-height: 1.2em;
+  margin: 8px 0 0;
+}
+
+.board-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.toolbar {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.inline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.inline input {
+  margin-top: 0;
+}
+
+.grow {
+  flex: 1;
+  min-width: 240px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 760px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.col {
+  background: var(--sand);
+  border-radius: var(--radius);
+  padding: 14px;
+  min-height: 160px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--coral);
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.task:hover {
+  border-color: var(--coral);
+}
+
+.task .t-id {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+.task .t-title {
+  display: block;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+#viewer {
+  margin-top: 24px;
+}
+
+.detail {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.detail h3 {
+  margin: 0 0 12px;
+}
+
+.detail .row {
+  display: flex;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.detail .k {
+  width: 120px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.detail .v {
+  flex: 1;
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.foot {
+  text-align: center;
+  padding: 16px;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
